@@ -32,7 +32,7 @@ app.use(cors({
 }));
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 
-Serve React build
+//Serve React build
 app.use(express.static(path.join(__dirname, './client/build')));
 
 // API routes
@@ -42,7 +42,7 @@ app.use('/api/v1/product', productRoutes);
 app.use('/api/v1/cart', cartRoutes);
 
 
-React fallback route
+//React fallback route
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
